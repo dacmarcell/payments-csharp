@@ -1,46 +1,33 @@
-﻿using System;
-using System.Runtime.CompilerServices;
+﻿using System.Globalization;
+using Microsoft.VisualBasic;
 
 namespace Payments{
     class Program{
         static void Main(string[] args){
-            var pagamentoBoleto = new PagamentoBoleto();
-            pagamentoBoleto.Pagar();
-            pagamentoBoleto.Vencimento = DateTime.Now;
-            pagamentoBoleto.NumeroBoleto = "123";
+            var payment = new PayWithCard();
+            payment.Pay("10");
+        }
+    }
+    public class Payment {
+        public DateTime PaymentDate { get;set; }
+        public Payment(){
+            Console.WriteLine("Iniciando o Pagamento");
+            PaymentDate = DateTime.Now;
+        }
+        public virtual void Pay(string numero){
+            Console.WriteLine("Pagar");
+        }
+        
+    }
 
-            var pagamento = new Pagamento();
-            pagamento.ToString();
-
+    public class PayWithCard : Payment{
+        public PayWithCard(){}
+        public override void Pay(string numero){
+            Console.WriteLine("Pagar cartão");
         }
     }
 
-    class Pagamento {
-        public DateTime Vencimento;
-
-        public virtual void Pagar(){}
-
-        public override string ToString()
-        {
-            return Vencimento.ToString("dd/mm/yyyy");
-        }
-    }
-
-    class PagamentoBoleto: Pagamento {
-        public string NumeroBoleto;
-
-        public override void Pagar()
-        {
-            // Regra do Boleto
-        }
-    }
-
-    class PagamentoCartaoDeCredito: Pagamento {
-        public string Numero;
-
-        public override void Pagar()
-        {
-            // Regra do Cartão de Crédito
-        }
+    public class Address{
+        string ZipCode;
     }
 }
