@@ -4,30 +4,21 @@ using Microsoft.VisualBasic;
 namespace Payments{
     class Program{
         static void Main(string[] args){
-            var payment = new PayWithCard();
-            payment.Pay("10");
+            using(var payment = new Payment()){
+                Console.WriteLine("Processando o Pagamento...");
+            }
+            Console.WriteLine("Hello World");
         }
     }
-    public class Payment {
-        public DateTime PaymentDate { get;set; }
+    public class Payment: IDisposable
+    {
         public Payment(){
-            Console.WriteLine("Iniciando o Pagamento");
-            PaymentDate = DateTime.Now;
+            Console.WriteLine("Iniciando o pagamento.");
         }
-        public virtual void Pay(string numero){
-            Console.WriteLine("Pagar");
+        public void Dispose()
+        {
+            Console.WriteLine("Finalizando o pagamento.");
         }
-        
-    }
 
-    public class PayWithCard : Payment{
-        public PayWithCard(){}
-        public override void Pay(string numero){
-            Console.WriteLine("Pagar cartão");
-        }
-    }
-
-    public class Address{
-        string ZipCode;
     }
 }
