@@ -2,6 +2,6 @@ namespace Payments
 {
     public partial class Payment
     {
-        public int PropertyA { get; set; }
+        public int PropertyB { get; set; }
     }
 }
