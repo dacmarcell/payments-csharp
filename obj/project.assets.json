@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dacma\\OneDrive\\Área de Trabalho\\projects\\oop-csharp\\oop-csharp.csproj",
-      "projectName": "oop-csharp",
-      "projectPath": "C:\\Users\\dacma\\OneDrive\\Área de Trabalho\\projects\\oop-csharp\\oop-csharp.csproj",
+      "projectUniqueName": "C:\\Users\\dacma\\OneDrive\\Área de Trabalho\\projects\\payments-csharp\\payment.csproj",
+      "projectName": "payment",
+      "projectPath": "C:\\Users\\dacma\\OneDrive\\Área de Trabalho\\projects\\payments-csharp\\payment.csproj",
       "packagesPath": "C:\\Users\\dacma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dacma\\OneDrive\\Área de Trabalho\\projects\\oop-csharp\\obj\\",
+      "outputPath": "C:\\Users\\dacma\\OneDrive\\Área de Trabalho\\projects\\payments-csharp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\dacma\\AppData\\Roaming\\NuGet\\NuGet.Config"
