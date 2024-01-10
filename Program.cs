@@ -6,6 +6,8 @@ namespace Payments{
     class Program{
         static void Main(string[] args){
             Console.WriteLine("Hello World");
+            var creditPayment = new PaymentWithCreditCard();
+            creditPayment.Pay(10);
         }
     }
 
@@ -14,7 +16,7 @@ namespace Payments{
         void Pay(double value);
     }
 
-    public class Payment : IPayment{
+    public abstract class Payment : IPayment{
         public DateTime Due {get; set;}
         public virtual void Pay(double value){}
     }
