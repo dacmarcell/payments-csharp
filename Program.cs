@@ -6,34 +6,21 @@ namespace Payments{
     class Program{
         static void Main(string[] args){
             Console.WriteLine("Hello World");
-            var creditPayment = new PaymentWithCreditCard();
-            creditPayment.Pay(10);
+            var pessoa = new Pessoa();
+            pessoa = new PessoaFisica();
+            pessoa = new PessoaJuridica();
         }
     }
 
-    public interface IPayment {
-        DateTime Due { get; set; }
-        void Pay(double value);
+    public class Pessoa {
+        public string Nome { get; set; }
     }
 
-    public abstract class Payment : IPayment{
-        public DateTime Due {get; set;}
-        public virtual void Pay(double value){}
+    public class PessoaFisica: Pessoa {
+        public string CPF { get; set; }
     }
 
-    public class PaymentWithCreditCard : Payment{
-        public override void Pay(double value){
-            base.Pay(value);
-        }
-    }
-    public class PaymentWithGooglePay : Payment{
-        public override void Pay(double value){
-            base.Pay(value);
-        }
-    }
-    public class PaymentWithApplePay : Payment{
-        public override void Pay(double value){
-            base.Pay(value);
-        }
+    public class PessoaJuridica: Pessoa {
+        public string CNPJ { get; set; }
     }
 }
